@@ -1,0 +1,26 @@
+# === CORE DEPENDENCIES ===
+crewai
+crewai-tools
+langchain-groq
+langchain-openai==0.3.32
+python-dotenv==1.0.1
+
+# === STREAMLIT WEB APP ===
+streamlit==1.40.0
+
+# === SUPPORTING LIBRARIES ===
+pydantic==2.9.2
+langchain
+langchain-core
+langchain-community
+openai==1.102.0
+PyPDF2==3.0.1
+python-docx==1.1.2
+
+# === OPTIONAL TOOLS ===
+requests==2.32.3
+beautifulsoup4==4.12.3
+pandas==2.2.3
+numpy==2.1.3
+lxml==5.3.0
+markdown==3.7
