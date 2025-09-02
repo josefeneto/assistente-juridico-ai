@@ -85,11 +85,11 @@ def sidebar_info():
         
         st.markdown("### 📚 Exemplos de Perguntas")
         exemplos = [
-            "Requisitos para contrato de compra e venda",
-            "Crime de ameaça por mensagem",
-            "Constituição de sociedade por quotas",
-            "Elementos do crime de furto",
-            "Direitos do inquilino"
+            "Quais são os Requisitos para contrato de compra e venda?",
+            "Qual é o enquadramento do Crime de ameaça por mensagem?",
+            "Como se faz a Constituição de sociedade por quotas?",
+            "Descreve os diversos Elementos do crime de furto?",
+            "Explicar os Direitos do inquilino particular?"
         ]
         
         for exemplo in exemplos:
