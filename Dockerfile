@@ -1,39 +1,31 @@
-# Use Python 3.13 slim image
 FROM python:3.13-slim
 
-# Set working directory
 WORKDIR /app
 
-# Install system dependencies
+# Instalar dependências do sistema
 RUN apt-get update && apt-get install -y \
-    gcc \
-    g++ \
+    build-essential \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first (for better caching)
+# Copiar requirements primeiro para aproveitar cache do Docker
 COPY requirements.txt .
 
-# Install Python dependencies
+# Instalar dependências Python
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
-COPY . .
+# Copiar código da aplicação
+COPY app.py .
+COPY utils/ utils/
 
-# Create necessary directories
-RUN mkdir -p data uploads temp
+# Criar diretórios necessários
+RUN mkdir -p uploads temp
 
-# Set environment variables
-ENV PYTHONPATH=/app
+# Definir variáveis de ambiente
+ENV PYTHONUNBUFFERED=1
 
-# Expose port (Railway will set PORT env variable)
-EXPOSE $PORT
+# Expor porta
+EXPOSE 8501
 
-# Streamlit configuration
-RUN mkdir -p ~/.streamlit
-RUN echo "[server]" > ~/.streamlit/config.toml && \
-    echo "headless = true" >> ~/.streamlit/config.toml && \
-    echo "port = \$PORT" >> ~/.streamlit/config.toml && \
-    echo "address = \"0.0.0.0\"" >> ~/.streamlit/config.toml
-
-# Run the Streamlit application
-CMD streamlit run streamlit_app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
+# Comando que evita completamente o problema do config.toml
+CMD streamlit run app.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true --browser.gatherUsageStats=false
