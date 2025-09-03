@@ -219,7 +219,11 @@ def main():
         if limpar:
             st.rerun()
         
-        # Processar pergunta
+	st.write(f"DEBUG - pergunta_usuario: '{pergunta_usuario}'")
+	st.write(f"DEBUG - strip(): '{pergunta_usuario.strip()}'")
+	st.write(f"DEBUG - bool check: {bool(pergunta_usuario.strip())}")  
+      
+	# Processar pergunta
         if processar and pergunta_usuario.strip():
             st.markdown("---")
             st.markdown("### 🤖 Processamento da Consulta")
@@ -269,53 +273,4 @@ def main():
             }
         ]
         
-        for especialista in especialistas:
-            st.markdown(f"""
-            <div class="specialist-card">
-                <h4 style="color: {especialista['cor']};">{especialista['titulo']}</h4>
-                <p><strong>Áreas:</strong></p>
-                <ul>
-            """, unsafe_allow_html=True)
-            
-            for area in especialista['areas']:
-                st.markdown(f"<li>{area}</li>", unsafe_allow_html=True)
-            
-            st.markdown("</ul></div>", unsafe_allow_html=True)
-    
-    # Histórico de consultas (se houver)
-    if 'historico' in st.session_state and st.session_state.historico:
-        st.markdown("---")
-        st.markdown("### 📚 Histórico de Consultas")
-        
-        with st.expander("Ver histórico"):
-            for i, item in enumerate(reversed(st.session_state.historico[-5:])):  # Últimas 5
-                st.markdown(f"""
-                **{i+1}. {item['timestamp']}**  
-                **P:** {item['pergunta']}  
-                **R:** {item['resposta']}
-                ---
-                """)
-    
-    # Aviso legal (sempre presente)
-    st.markdown("---")
-    st.markdown("""
-    <div class="warning-box">
-        <h4>⚖️ AVISO LEGAL OBRIGATÓRIO</h4>
-        <p>A informação fornecida é de natureza geral e meramente informativa, não constituindo aconselhamento jurídico específico. 
-        Esta informação não substitui a consulta presencial a um advogado devidamente inscrito na Ordem dos Advogados. 
-        A aplicação da lei depende sempre das circunstâncias concretas e específicas de cada situação.</p>
-        <p><strong>Para assistência jurídica profissional, consulte sempre um advogado qualificado.</strong></p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Rodapé
-    st.markdown("---")
-    st.markdown("""
-    <div style="text-align: center; color: #6c757d; font-size: 0.8em;">
-        Assistente Jurídico IA v1.0 | Especialização: Direito Português<br>
-        Desenvolvido com CrewAI, Groq e Streamlit
-    </div>
-    """, unsafe_allow_html=True)
-
-if __name__ == "__main__":
-    main()
+  Fatura_DIGAL-2025-08
