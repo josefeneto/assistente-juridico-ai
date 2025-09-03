@@ -219,9 +219,9 @@ def main():
         if limpar:
             st.rerun()
         
-	st.write(f"DEBUG - pergunta_usuario: '{pergunta_usuario}'")
-	st.write(f"DEBUG - strip(): '{pergunta_usuario.strip()}'")
-	st.write(f"DEBUG - bool check: {bool(pergunta_usuario.strip())}")  
+        st.write(f"DEBUG - pergunta_usuario: '{pergunta_usuario}'")
+        st.write(f"DEBUG - strip(): '{pergunta_usuario.strip()}'")
+        st.write(f"DEBUG - bool check: {bool(pergunta_usuario.strip())}")  
       
 	# Processar pergunta
         if processar and pergunta_usuario.strip():
