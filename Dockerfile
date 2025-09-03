@@ -28,5 +28,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8501
 
 # Comando que evita completamente o problema do config.toml
-CMD streamlit run streamlit_app.py
-#CMD streamlit run streamlit_app.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true --browser.gatherUsageStats=false
+CMD streamlit run streamlit_app.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true --browser.gatherUsageStats=false
