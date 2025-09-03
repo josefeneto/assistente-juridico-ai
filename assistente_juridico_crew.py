@@ -2,7 +2,7 @@
 """
 Assistente Jurídico IA - Portugal
 Sistema multi-agente especializado em Direito Português
-Versão com Tasks organizadas
+Versão com Tasks organizadas 
 """
 
 import sys
