@@ -16,7 +16,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar código da aplicação
 COPY streamlit_app.py .
+COPY assistente_juridico_crew.py .
 COPY utils/ utils/
+COPY agents/ agents/
+COPY tasks/ tasks/
+COPY tools/ tools/
 
 # Criar diretórios necessários
 RUN mkdir -p uploads temp
