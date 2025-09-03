@@ -15,7 +15,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copiar código da aplicação
-COPY app.py .
+COPY streamlit_app.py .
 COPY utils/ utils/
 
 # Criar diretórios necessários
@@ -28,4 +28,4 @@ ENV PYTHONUNBUFFERED=1
 EXPOSE 8501
 
 # Comando que evita completamente o problema do config.toml
-CMD streamlit run app.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true --browser.gatherUsageStats=false
+CMD streamlit run streamlit_app.py --server.port=${PORT:-8501} --server.address=0.0.0.0 --server.headless=true --browser.gatherUsageStats=false
