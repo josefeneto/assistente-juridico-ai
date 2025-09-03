@@ -272,5 +272,3 @@ def main():
                 "cor": "#007bff"
             }
         ]
-        
-  Fatura_DIGAL-2025-08
