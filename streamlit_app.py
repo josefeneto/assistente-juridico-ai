@@ -11,10 +11,10 @@ from datetime import datetime
 import time
 
 # TEMPORÁRIO - para DEBUG d Railway
-# Lemos a chave GROQ da variável OPENAI_API_KEY (só o nome da variável)
-groq_key = os.getenv('OPENAI_API_KEY')
+## Lemos a chave GROQ da variável OPENAI_API_KEY (só o nome da variável)
+#groq_key = os.getenv('OPENAI_API_KEY')
 # Mas usamos modelo GROQ (porque a chave é GROQ)
-groq_model = 'groq/llama-3.1-8b-instant'
+#groq_model = 'groq/llama-3.1-8b-instant'
 
 # Importar a função principal do sistema
 from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
@@ -30,33 +30,7 @@ def configurar_pagina():
         initial_sidebar_state="expanded"
     )
 
-    # === DEBUG COMPLETO ===
-    st.write(f"TESTE_API_KEY: {os.getenv('TESTE_API_KEY')}")
-    st.write(f"Total de variáveis: {len(os.environ)}")
 
-    # Mostrar TODAS as variáveis (primeiros chars)
-    st.write("**Todas as variáveis disponíveis:**")
-    for key in sorted(os.environ.keys()):
-        if not key.startswith('_'):  # Filtrar variáveis internas
-            st.write(f"- {key}")
-
-    st.write("🔍 **DEBUG - Variáveis de Ambiente:**")
-    st.write(f"GROQ_API_KEY existe: {os.getenv('GROQ_API_KEY') is not None}")
-    st.write(f"GROQ_MODEL: {os.getenv('GROQ_MODEL')}")
-
-    # Mostrar todas as variáveis que contém GROQ
-    st.write("**Todas as variáveis GROQ:**")
-    for key, value in os.environ.items():
-        if 'GROQ' in key.upper():
-            st.write(f"- {key}: {'***' if 'KEY' in key else value}")
-
-    # Verificar se há alguma variável similar
-    st.write("**Variáveis similares:**")
-    for key, value in os.environ.items():
-        if any(x in key.upper() for x in ['API', 'MODEL', 'GROC', 'GROK']):
-            st.write(f"- {key}: {'***' if 'KEY' in key else value}")
-# === FIM DEBUG ===
-    
     # CSS personalizado
     st.markdown("""
     <style>
