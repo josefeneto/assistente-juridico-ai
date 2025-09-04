@@ -101,8 +101,6 @@ def verificar_sistema():
     """
     Verifica se o sistema está configurado corretamente
     """
-    # load_dotenv() - codigo unico anterior ao try
-
     try:
         if os.path.exists('.env'):
             load_dotenv()
@@ -113,11 +111,14 @@ def verificar_sistema():
     openai_key = os.getenv('OPENAI_API_KEY')
     
     if not groq_key and not openai_key:
-        st.error("⚠️ Nenhuma API key configurada! Configure GROQ_API_KEY ou OPENAI_API_KEY no arquivo .env")
+        st.error("⚠️ Nenhuma API key configurada!")
+        st.info("Verifique as variáveis GROQ_API_KEY ou OPENAI_API_KEY no Railway Dashboard")
+        # Debug: mostrar variáveis disponíveis (remover depois)
+        st.write("Variáveis disponíveis:", [key for key in os.environ.keys() if 'GROQ' in key or 'OPENAI' in key])
         return False
     
-    if groq_key and groq_key.startswith('your_'):  # ← Alteração aqui
-        st.warning("⚠️ API key do Groq não foi atualizada no arquivo .env")
+    if groq_key and groq_key.startswith('your_'):
+        st.warning("⚠️ API key do Groq parece ser um placeholder - verifique a configuração")
         
     return True
 
