@@ -224,15 +224,19 @@ def main():
         # st.write(f"DEBUG - bool check pergunta_usuario: {bool(pergunta_usuario.strip())}")
         # st.write(f"DEBUG - bool check processar: {bool(processar)}")
 
+
         # Processar pergunta
         # if processar and pergunta_usuario.strip():
         if pergunta_usuario.strip():
             st.markdown("---")
             st.markdown("### 🤖 Processamento da Consulta")
+
             
             # Mostrar pergunta
             st.markdown(f"**Pergunta:** {pergunta_usuario}")
             
+            time.sleep(15)  # Pausa entre consultas por restrição de licenciamento Grok
+
             # Processar com indicadores visuais
             resultado = processar_pergunta_async(pergunta_usuario)
             
@@ -250,7 +254,6 @@ def main():
                 'resposta': resultado[:200] + "..." if len(resultado) > 200 else resultado
             })
 
-            time.sleep(20)  # Pausa entre consultas por restrição de licenciamento Grok
             
         elif processar:
             st.warning("⚠️ Por favor, digite uma pergunta antes de processar.")
