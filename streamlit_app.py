@@ -11,6 +11,21 @@ from datetime import datetime
 import time
 
 
+
+# Importar a função principal do sistema
+from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
+
+def configurar_pagina():
+    """
+    Configuração inicial da página Streamlit
+    """
+    st.set_page_config(
+        page_title="Assistente Jurídico IA - Portugal",
+        page_icon="⚖️",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
+
 # === DEBUG COMPLETO ===
 st.write("🔍 **DEBUG - Variáveis de Ambiente:**")
 st.write(f"GROQ_API_KEY existe: {os.getenv('GROQ_API_KEY') is not None}")
@@ -29,20 +44,6 @@ for key, value in os.environ.items():
         st.write(f"- {key}: {'***' if 'KEY' in key else value}")
 # === FIM DEBUG ===
 
-
-# Importar a função principal do sistema
-from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
-
-def configurar_pagina():
-    """
-    Configuração inicial da página Streamlit
-    """
-    st.set_page_config(
-        page_title="Assistente Jurídico IA - Portugal",
-        page_icon="⚖️",
-        layout="wide",
-        initial_sidebar_state="expanded"
-    )
     
     # CSS personalizado
     st.markdown("""
