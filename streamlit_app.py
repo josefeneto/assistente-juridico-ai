@@ -110,7 +110,7 @@ def verificar_sistema():
         st.error("⚠️ Nenhuma API key configurada! Configure GROQ_API_KEY ou OPENAI_API_KEY no arquivo .env")
         return False
     
-    if groq_key and groq_key == 'your_groq_api_key_here':
+    if groq_key and groq_key.startswith('your_'):  # ← Alteração aqui
         st.warning("⚠️ API key do Groq não foi atualizada no arquivo .env")
         
     return True
