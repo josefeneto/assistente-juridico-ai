@@ -177,11 +177,17 @@ def modo_interativo():
     print("=" * 50)
     
     exemplos = [
+        "Qual é o enquadramento do Crime de ameaça por mensagem?",
+        "Como se faz a Constituição de sociedade por quotas?",
+        "Descreve os diversos Elementos do crime de furto?",
+        "Explicar os Direitos do inquilino particular?"
+"""
         "Quais são os requisitos para um contrato de compra e venda ser válido?",
         "Se alguém me ameaçar de morte por mensagem, que crime é esse?",
         "Quais são as obrigações de uma sociedade por quotas?",
         "Como posso constituir uma empresa unipessoal por quotas?",
         "O que constitui o crime de furto em Portugal?"
+"""
     ]
     
     while True:
