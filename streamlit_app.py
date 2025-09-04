@@ -14,8 +14,7 @@ import time
 # Lemos a chave GROQ da variável OPENAI_API_KEY (só o nome da variável)
 groq_key = os.getenv('OPENAI_API_KEY')  # Contém chave GROQ (gsk_...)
 
-# Mas usamos modelo GROQ (porque a chave é GROQ)
-#groq_model = 'groq/llama-3.1-8b-instant'  # ✅ Modelo GROQ correto
+
 
 # Importar a função principal do sistema
 from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
