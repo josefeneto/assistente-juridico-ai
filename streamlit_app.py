@@ -101,7 +101,13 @@ def verificar_sistema():
     """
     Verifica se o sistema está configurado corretamente
     """
-    load_dotenv()
+    # load_dotenv() - codigo unico anterior ao try
+
+    try:
+        if os.path.exists('.env'):
+            load_dotenv()
+    except ImportError:
+        pass
     
     groq_key = os.getenv('GROQ_API_KEY')
     openai_key = os.getenv('OPENAI_API_KEY')
