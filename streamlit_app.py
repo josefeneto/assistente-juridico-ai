@@ -203,7 +203,7 @@ def main():
             "Digite sua pergunta sobre Direito Português:",
             value=pergunta_inicial,
             height=100,
-            placeholder="Ex: Quais são os requisitos para um contrato ser válido em Portugal? Aguarde 30 segundos antes de nova pergunta, devido a licenciamento LLM."
+            placeholder="Ex: Quais são os requisitos para um contrato ser válido em Portugal? Aguarde 30 segundos antes de nova pergunta, devido a licenciamento LLM. Obrigado!"
         )
 
 
