@@ -9,10 +9,13 @@ def create_coordenador_agent():
     groq_key = os.getenv('GROQ_API_KEY')
     groq_model = os.getenv('GROQ_MODEL')
 
+    print(f"GROQ_API_KEY existe: {groq_key and groq_key != 'your_groq_api_key_here'}")
+
     if groq_key and groq_key != 'your_groq_api_key_here':
         from langchain_groq import ChatGroq
         llm = ChatGroq(
             temperature=0.1,
+            max_tokens=5500,
             api_key=groq_key,
             model=groq_model
         )
@@ -24,7 +27,8 @@ def create_coordenador_agent():
             model=openai_model
         )
 
-    print(f"GROC_API_KEY existe: {os.getenv('GROC_API_KEY') is not None}")
+    print(f"OPENAI_API_KEY existe: {os.getenv('OPENAI_API_KEY') is not None}")
+    print(f"GROQ_API_KEY existe: {os.getenv('GROQ_API_KEY') is not None}")
     print(f"Modelo configurado: {groq_model}")
     import requests
     headers = {"Authorization": f"Bearer {groq_key}"}

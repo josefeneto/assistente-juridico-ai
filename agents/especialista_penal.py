@@ -22,6 +22,7 @@ def create_especialista_penal():
         from langchain_groq import ChatGroq
         llm = ChatGroq(
             temperature=0.1,
+            max_tokens=5500,
             api_key=groq_key,
             model=groq_model
         )
