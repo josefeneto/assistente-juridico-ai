@@ -12,10 +12,9 @@ import time
 
 # TEMPORÁRIO - para DEBUG d Railway
 # Lemos a chave GROQ da variável OPENAI_API_KEY (só o nome da variável)
-groq_key = os.getenv('OPENAI_API_KEY')  # Contém chave GROQ
-
+groq_key = os.getenv('OPENAI_API_KEY')
 # Mas usamos modelo GROQ (porque a chave é GROQ)
-groq_model = 'groq/llama-3.1-8b-instant'  # ✅ Modelo GROQ correto
+groq_model = 'groq/llama-3.1-8b-instant'
 
 # Importar a função principal do sistema
 from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
