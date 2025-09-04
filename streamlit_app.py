@@ -10,7 +10,9 @@ from dotenv import load_dotenv
 from datetime import datetime
 import time
 
-
+# TEMPORÁRIO - para DEBUG d Railway
+os.environ['GROQ_API_KEY'] = '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'
+os.environ['GROQ_MODEL'] = 'groq/llama-3.1-8b-instant'
 
 # Importar a função principal do sistema
 from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
