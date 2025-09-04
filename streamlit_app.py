@@ -27,6 +27,15 @@ def configurar_pagina():
     )
 
     # === DEBUG COMPLETO ===
+    st.write(f"TESTE_API_KEY: {os.getenv('TESTE_API_KEY')}")
+    st.write(f"Total de variáveis: {len(os.environ)}")
+
+    # Mostrar TODAS as variáveis (primeiros chars)
+    st.write("**Todas as variáveis disponíveis:**")
+    for key in sorted(os.environ.keys()):
+        if not key.startswith('_'):  # Filtrar variáveis internas
+            st.write(f"- {key}")
+
     st.write("🔍 **DEBUG - Variáveis de Ambiente:**")
     st.write(f"GROQ_API_KEY existe: {os.getenv('GROQ_API_KEY') is not None}")
     st.write(f"GROQ_MODEL: {os.getenv('GROQ_MODEL')}")
