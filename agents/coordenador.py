@@ -23,6 +23,13 @@ def create_coordenador_agent():
             temperature=0.1,
             model=openai_model
         )
+
+    print(f"GROC_API_KEY existe: {os.getenv('GROC_API_KEY') is not None}")
+    print(f"Modelo configurado: {groq_model}")
+    import requests
+    headers = {"Authorization": f"Bearer {groq_key}"}
+    response = requests.get("https://api.groq.com/openai/v1/models", headers=headers)
+    print(response.status_code)
     
     coordenador = Agent(
         role='Coordenador Jurídico',
