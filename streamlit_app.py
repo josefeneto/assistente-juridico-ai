@@ -10,6 +10,26 @@ from dotenv import load_dotenv
 from datetime import datetime
 import time
 
+
+# === DEBUG COMPLETO ===
+st.write("🔍 **DEBUG - Variáveis de Ambiente:**")
+st.write(f"GROQ_API_KEY existe: {os.getenv('GROQ_API_KEY') is not None}")
+st.write(f"GROQ_MODEL: {os.getenv('GROQ_MODEL')}")
+
+# Mostrar todas as variáveis que contém GROQ
+st.write("**Todas as variáveis GROQ:**")
+for key, value in os.environ.items():
+    if 'GROQ' in key.upper():
+        st.write(f"- {key}: {'***' if 'KEY' in key else value}")
+
+# Verificar se há alguma variável similar
+st.write("**Variáveis similares:**")
+for key, value in os.environ.items():
+    if any(x in key.upper() for x in ['API', 'MODEL', 'GROC', 'GROK']):
+        st.write(f"- {key}: {'***' if 'KEY' in key else value}")
+# === FIM DEBUG ===
+
+
 # Importar a função principal do sistema
 from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
 
