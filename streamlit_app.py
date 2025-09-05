@@ -99,7 +99,7 @@ def sidebar_info():
 
 def verificar_sistema():
     """
-    Verifica se o sistema está configurado corretamente
+    Verifica se o sistema está configurado corretamente - v2
     """
     try:
         if os.path.exists('.env'):
