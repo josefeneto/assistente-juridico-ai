@@ -12,14 +12,14 @@ import time
 
 
 """
-# DEBUG TEMPORÁRIO - REMOVER DEPOIS
+DEBUG TEMPORÁRIO - REMOVER DEPOIS
 st.write("=== DEBUG RAILWAY ===")
 st.write("Todas as variáveis de ambiente:")
 env_vars = dict(os.environ)
 st.write(env_vars)
 st.write("===================")
 
-# FIM DO DEBUG
+FIM DO DEBUG
 """
 
 # Importar a função principal do sistema
