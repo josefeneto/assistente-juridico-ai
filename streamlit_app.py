@@ -11,6 +11,7 @@ from datetime import datetime
 import time
 
 
+"""
 # DEBUG TEMPORÁRIO - REMOVER DEPOIS
 st.write("=== DEBUG RAILWAY ===")
 st.write("Todas as variáveis de ambiente:")
@@ -19,6 +20,7 @@ st.write(env_vars)
 st.write("===================")
 
 # FIM DO DEBUG
+"""
 
 # Importar a função principal do sistema
 from assistente_juridico_crew import processar_consulta_juridica, inicializar_sistema
